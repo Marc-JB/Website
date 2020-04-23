@@ -1,0 +1,123 @@
+header > .bingo-header, header > .main-header {
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    width: 100%;
+    max-width: 100vw;
+}
+
+header > .bingo-header {
+    position: absolute;
+    z-index: 15;
+}
+
+header > .main-header {
+    position: fixed;
+    z-index: 5;
+}
+
+main > section.bingo {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+}
+
+main > section.modules {
+    padding: 16px;
+}
+
+main > section.bingo > .background {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: calc(100% - 100px);
+    background: linear-gradient(145deg,#B71C1C,#F44336);
+    z-index: 10;
+}
+
+main > section.bingo > .content {
+    text-align: center;
+    position: relative;
+    z-index: 12;
+}
+
+main > section.bingo > .content > * {
+    display: inline-block;
+    vertical-align: top;
+    padding: 16px;
+    text-align: initial;
+}
+
+main > section.bingo > .content > .text {
+    max-width: 400px;
+}
+
+main > section.bingo > .content > .screenshot {
+    padding: 0px 16px;
+}
+
+main > section.bingo > .content > .screenshot > img {
+    height: 75vh;
+}
+
+main > section.modules > .background {
+    position: absolute;
+    font-size: 20vw;
+    transform: rotate(-20deg);
+    color: #009688;
+    opacity: 0.1;
+    right: 4vw;
+    width: 20vw;
+    height: 20vw;
+}
+
+main > section.modules > .module {
+    display: inline-block;
+    width: 400px;
+    max-width: 100%;
+    padding: 8px;
+}
+
+@media only screen and (max-width: 730px) {
+    main > section.bingo > .content > .screenshot > img {
+        height: 50vh;
+    }
+
+    main > section.bingo > .background {
+        height: 100%;
+    }
+
+    main > section.modules > .background {
+        display: none;
+    }
+}
+
+.dark-theme .mat-stroked-button:not([disabled]) {
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.button-bar > a {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+.tag {
+    font-size: 0.5em;
+    padding: 2px 8px;
+    border-radius: 1em;
+}
+
+.tag.primary {
+    background-color: #009688;
+    color: white;
+}
+
+.tag.gray {
+    background-color: #E0E0E0;
+}
+
+a > .play-badge {
+    height:36px;
+    vertical-align:top;
+}

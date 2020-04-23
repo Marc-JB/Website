@@ -1,0 +1,23 @@
+<header>
+    <app-header [menu]="appMenu" [style]="1"></app-header>
+
+    <mat-menu #appMenu="matMenu">
+        <button mat-menu-item routerLink="/">
+            <mat-icon>home</mat-icon>
+            <span>Go home</span>
+        </button>
+        <button mat-menu-item routerLink="/privacy">
+            <mat-icon>policy</mat-icon>
+            <span>Privacy policy</span>
+        </button>
+        <a mat-menu-item href='./3rdpartylicenses.txt' target="_blank" rel="noopener noreferrer">
+            <mat-icon>description</mat-icon>
+            <span>Open-source licenses</span>
+        </a>
+    </mat-menu>
+</header>
+
+<main>
+    <h1>Privacy policy</h1>
+    <p>No data is being collected through applications and services of <i>Marc apps & software</i> that have this privacy policy attached.</p>
+</main>

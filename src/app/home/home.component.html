@@ -1,0 +1,81 @@
+<header>
+    <app-header [menu]="appMenu" class="bingo-header"  [style]="3"></app-header>
+    <app-header [menu]="appMenu" class="main-header" [style]="0"></app-header>
+
+    <mat-menu #appMenu="matMenu">
+        <button mat-menu-item routerLink="/privacy">
+            <mat-icon>policy</mat-icon>
+            <span>Privacy policy</span>
+        </button>
+        <a mat-menu-item href='./3rdpartylicenses.txt' target="_blank" rel="noopener noreferrer">
+            <mat-icon>description</mat-icon>
+            <span>Open-source licenses</span>
+        </a>
+    </mat-menu>
+</header>
+
+<main>
+    <section class="bingo dark-theme">
+        <div class="background"></div>
+        <app-header [style]="2" style="position: relative; display: hidden;"></app-header>
+        <div class="content">
+            <div class="screenshot">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC8AAABWCAYAAABfCs+lAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiQAABYkAZsVxhQAAAAmSURBVHhe7cEBAQAAAIIg/69uSEAAAAAAAAAAAAAAAAAAAABwrgY/fgABZJSb9AAAAABJRU5ErkJggg=="
+                alt="Bingo caller/number generator application screenshot"
+                onload="if(this.src.startsWith('data:image/png;base64,')) this.src='../../assets/BingoCallerScreenshot.png'" />
+            </div>
+            <div class="text">
+                <h1>Bingo caller/number generator</h1>
+                <p>This app generates and calls random numbers for 75-number bingo.</p>
+                <div class="button-bar">
+                    <a mat-stroked-button href="https://bingo.marc-apps.nl/index.html" target="_blank"
+                        rel="noopener noreferrer">Try now</a>
+                    <a href='https://play.google.com/store/apps/details?id=com.marc.bingonumbergenerator&utm_source=https://marc-apps.nl/&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'
+                        target="_blank" rel="noopener noreferrer">
+                        <img class="play-badge" alt='Get it on Google Play' src='../../assets/play_badge.png' />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="modules">
+        <mat-icon class="background mobile-hidden">extension</mat-icon>
+
+        <h1>Modules</h1>
+        <div class="module">
+            <mat-card>
+                <mat-card-title>WebServer <sup class="tag primary">preview</sup>
+                </mat-card-title>
+                <mat-card-subtitle>For NodeJS</mat-card-subtitle>
+                <mat-card-content>
+                    <p>Experimental HTTP server for node which can be used easily with ECMAScript/TypeScript decorators
+                    </p>
+                </mat-card-content>
+                <mat-card-actions align="end">
+                    <a mat-button href="https://www.npmjs.com/package/@peregrine/webserver" target="_blank"
+                        rel="noopener noreferrer">View on NPM</a>
+                    <a mat-button href="https://github.com/Marc-JB/webserver/tree/feature/rewrite-2" target="_blank"
+                        rel="noopener noreferrer">View on GitHub</a>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+
+        <div class="module">
+            <mat-card>
+                <mat-card-title>FileSystem <sup class="tag gray">deprecated</sup>
+                </mat-card-title>
+                <mat-card-subtitle>For NodeJS</mat-card-subtitle>
+                <mat-card-content>
+                    <p>Simple FileSystem API for NodeJS, with Promise and Stream support</p>
+                </mat-card-content>
+                <mat-card-actions align="end">
+                    <a mat-button href="https://www.npmjs.com/package/@peregrine/filesystem" target="_blank"
+                        rel="noopener noreferrer">View on NPM</a>
+                    <a mat-button href="https://github.com/Marc-JB-archived/filesystem/tree/master" target="_blank"
+                        rel="noopener noreferrer">View on GitHub</a>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </section>
+</main>

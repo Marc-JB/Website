@@ -1,0 +1,15 @@
+<mat-toolbar *ngIf="!isTransparent" color="primary" [class.mat-elevation-z2]="style === 1">
+    <span routerLink="/">Marc apps & software</span>
+    <span style="flex: 1 1 auto"></span>
+    <button *ngIf="menu" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu" matTooltip="Menu">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+</mat-toolbar>
+
+<mat-toolbar *ngIf="isTransparent" class="transparent" [class.dark-theme]="style === 3">
+    <span routerLink="/">Marc apps & software</span>
+    <span style="flex: 1 1 auto"></span>
+    <button *ngIf="menu" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu" matTooltip="Menu">
+        <mat-icon>more_vert</mat-icon>
+    </button>
+</mat-toolbar>

@@ -1,0 +1,18 @@
+main > div {
+    padding: 16px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+img {
+    max-width: calc(100vw - 32px);
+    width: 600px;
+    max-height: 50vh;
+    opacity: 0.6;
+    margin-bottom: 16px;
+}
