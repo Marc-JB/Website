@@ -38,9 +38,9 @@ jobs:
         cp -r /repo/.git/ /dist/.git/
     - name: Copy CNAME, README, LICENSE
       run: |
-        [[ ! -f /tmp/repo/CNAME ]] || cp /repo/CNAME /dist/CNAME
-        [[ ! -f /tmp/repo/README.md ]] || cp /repo/README.md /dist/README.md
-        [[ ! -f /tmp/repo/LICENSE ]] || cp /repo/LICENSE /dist/LICENSE
+        [[ ! -f /repo/CNAME ]] || cp /repo/CNAME /dist/CNAME
+        [[ ! -f /repo/README.md ]] || cp /repo/README.md /dist/README.md
+        [[ ! -f /repo/LICENSE ]] || cp /repo/LICENSE /dist/LICENSE
     - name: Publish
       run: |
         cd /dist
