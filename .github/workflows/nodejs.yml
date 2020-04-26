@@ -5,7 +5,7 @@ name: Node.js CD
 
 on:
   push:
-    branches: [ dev ]
+    branches: [ master ]
 
 jobs:
   build:
@@ -25,7 +25,6 @@ jobs:
     - name: Build project
       run: |
         ng build --prod --base-href https://marc-apps.nl/
-        ls
         cp ./dist/index.html ./dist/404.html
     - name: Config git
       run: |
@@ -45,4 +44,4 @@ jobs:
         cd ./dist
         git add -A
         git commit -m "GitHub Actions Continuous Delivery release"
-# git push origin master
+        git push origin master
