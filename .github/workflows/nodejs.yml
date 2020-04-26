@@ -25,25 +25,23 @@ jobs:
     - name: Build project
       run: |
         ng build --prod --base-href https://marc-apps.nl/
-        cp /dist/index.html /dist/404.html
+        cp ./dist/index.html ./dist/404.html
     - name: Config git
       run: |
         git config --global user.name "GitHub Actions Continuous Delivery service"
         git config --global user.email "16156117+Marc-JB@users.noreply.github.com"
     - name: Connect to git
-      run: git clone https://Marc-JB:${{secrets.GIT_TOKEN}}@github.com/Marc-Apps/Marc-Apps.github.io.git /repo
+      run: git clone https://Marc-JB:${{secrets.GIT_TOKEN}}@github.com/Marc-Apps/Marc-Apps.github.io.git ./repo
     - name: Move .git directory
-      run: |
-        mkdir --mode=777 /dist/.git/
-        cp -r /repo/.git/ /dist/.git/
+      run: cp -r ./repo/.git/ ./dist/.git/
     - name: Copy CNAME, README, LICENSE
       run: |
-        [[ ! -f /repo/CNAME ]] || cp /repo/CNAME /dist/CNAME
-        [[ ! -f /repo/README.md ]] || cp /repo/README.md /dist/README.md
-        [[ ! -f /repo/LICENSE ]] || cp /repo/LICENSE /dist/LICENSE
+        cp ./repo/CNAME ./dist/CNAME || echo "No CNAME"
+        cp ./repo/README.md ./dist/README.md || echo "No README.md"
+        cp ./repo/LICENSE ./dist/LICENSE || echo "No LICENSE"
     - name: Publish
       run: |
-        cd /dist
+        cd ./dist
         git add -A
         git commit -m "GitHub Actions Continuous Delivery release"
         git push origin master
