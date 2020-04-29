@@ -1,4 +1,5 @@
 # Marc Apps & Software Website [![License: CC BY-NC-ND 4.0](https://badgen.net/badge/license/CC%20BY-NC-ND%204.0/blue)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+Website for applications and other software created by Marc apps & software.
 
 ## Legal & license
 Copyright © 2019 Marc apps & software.
