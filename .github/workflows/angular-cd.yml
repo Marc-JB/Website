@@ -1,0 +1,57 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Angular CD
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    
+      # Checkout
+      - name: Checkout repository
+        uses: actions/checkout@v2
+    
+      # Set up Node.js
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+        
+      # Cache
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-node-
+    
+      # Install dependencies
+      - name: Install dependencies
+        run: |
+          npm install -g @angular/cli
+          npm ci
+    
+      # Build
+      - name: Build project
+        run: ng build --prod --base-href https://marc-apps.nl/
+    
+      # Deploy to GitHub Pages
+      - name: Copy README, CNAME, etc.
+        run: |
+          sudo cp ./dist/index.html ./dist/404.html
+          sudo cp ./CNAME ./dist/CNAME || echo "No CNAME"
+          sudo cp ./README.md ./dist/README.md || echo "No README.md"
+          sudo cp ./LICENSE ./dist/LICENSE || echo "No LICENSE"
+    
+      - name: Deploy to GitHub Pages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: gh-pages
+          build_dir: ./dist/
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
