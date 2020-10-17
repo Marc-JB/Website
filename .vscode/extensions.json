@@ -1,5 +1,6 @@
 {
     "recommendations": [
-        "visualstudioexptteam.vscodeintellicode"
+        "visualstudioexptteam.vscodeintellicode",
+        "ms-vscode.vscode-typescript-tslint-plugin"
     ],
 }
