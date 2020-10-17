@@ -22,8 +22,8 @@ main > section.bingo {
     width: 100%;
 }
 
-main > section.modules {
-    padding: 16px;
+main > section.modules, main > section.apps {
+    padding: 32px;
 }
 
 main > section.bingo > .background {
@@ -72,7 +72,7 @@ main > section.modules > .background {
     height: 20vw;
 }
 
-main > section.modules > .module {
+main > section.modules > .module, main > section.apps > .app {
     display: inline-block;
     width: 400px;
     max-width: 100%;
@@ -80,6 +80,10 @@ main > section.modules > .module {
 }
 
 @media only screen and (max-width: 730px) {
+    main > section.modules, main > section.apps {
+        padding: 32px 16px;
+    }
+
     main > section.bingo > .content > .screenshot > img {
         height: 50vh;
     }
