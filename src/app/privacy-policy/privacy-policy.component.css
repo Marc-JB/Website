@@ -1,3 +1,13 @@
 main {
-    padding: 16px;
+    padding: 32px;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+main > section, main > nav {
+    padding: 16px 0;
+}
+
+section > section {
+    padding: 8px 0;
 }
