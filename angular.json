@@ -122,5 +122,8 @@
       }
     }
   },
-  "defaultProject": "Website"
+  "defaultProject": "Website",
+  "cli": {
+    "analytics": false
+  }
 }
