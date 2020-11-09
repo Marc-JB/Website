@@ -12,9 +12,14 @@ export enum HeaderStyle {
 export class HeaderComponent implements OnInit {
   @Input() style: HeaderStyle = HeaderStyle.PRIMARY_ELEVATED;
   @Input() menu: any = null;
+  @Input() maxWidth = 'auto';
 
   get isTransparent() {
     return this.style === HeaderStyle.TRANSPARENT || this.style === HeaderStyle.TRANSPARENT_DARK;
+  }
+
+  get maximumWidth() {
+    return `max-width: ${this.maxWidth};`;
   }
 
   constructor() {}
