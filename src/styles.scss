@@ -42,7 +42,7 @@ $Website-dark-theme: mat-dark-theme((
 @include angular-material-theme($Website-theme);
 
 .dark-theme {   
-  @include angular-material-theme($Website-dark-theme);
+  @include angular-material-color($Website-dark-theme);
 }
 
 /* You can add global styles to this file, and also import other style files */
