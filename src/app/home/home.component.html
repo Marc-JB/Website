@@ -1,6 +1,6 @@
 <header>
-    <app-header [menu]="appMenu" class="bingo-header" [style]="3"></app-header>
-    <app-header [menu]="appMenu" class="main-header" [style]="0"></app-header>
+    <app-header [menu]="appMenu" class="bingo-header" [headerStyle]="3"></app-header>
+    <app-header [menu]="appMenu" class="main-header" [headerStyle]="0"></app-header>
 
     <mat-menu #appMenu="matMenu">
         <button mat-menu-item routerLink="/privacy">
@@ -17,7 +17,7 @@
 <main>
     <section class="bingo dark-theme">
         <div class="background"></div>
-        <app-header [style]="2" style="position: relative; display: hidden;"></app-header>
+        <app-header [headerStyle]="2" style="position: relative; display: hidden;"></app-header>
         <div class="content">
             <div class="screenshot">
                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC8AAABWCAYAAABfCs+lAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiQAABYkAZsVxhQAAAAmSURBVHhe7cEBAQAAAIIg/69uSEAAAAAAAAAAAAAAAAAAAABwrgY/fgABZJSb9AAAAABJRU5ErkJggg=="

@@ -1,4 +1,4 @@
-<mat-toolbar *ngIf="!isTransparent" color="primary" [class.mat-elevation-z2]="style === 1">
+<mat-toolbar *ngIf="!isTransparent" color="primary" [class.mat-elevation-z2]="headerStyle === 1">
     <div [style]="maximumWidth">
         <span routerLink="/">Marc apps & software</span>
         <span style="flex: 1 1 auto"></span>
@@ -8,7 +8,7 @@
     </div>
 </mat-toolbar>
 
-<mat-toolbar *ngIf="isTransparent" class="transparent" [class.dark-theme]="style === 3">
+<mat-toolbar *ngIf="isTransparent" class="transparent" [class.dark-theme]="headerStyle === 3">
     <div [style]="maximumWidth">
         <span routerLink="/">Marc apps & software</span>
         <span style="flex: 1 1 auto"></span>
