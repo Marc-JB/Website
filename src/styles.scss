@@ -18,9 +18,23 @@ $Website-accent: mat-palette($mat-indigo);
 // The warn palette is optional (defaults to red).
 $Website-warn: mat-palette($mat-red);
 
-// Create the theme object (a Sass map containing all of the palettes).
-$Website-theme: mat-light-theme($Website-primary, $Website-accent, $Website-warn);
-$Website-dark-theme: mat-dark-theme($Website-primary, $Website-accent, $Website-warn);
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$Website-theme: mat-light-theme((
+  color: (
+    primary: $Website-primary,
+    accent: $Website-accent,
+    warn: $Website-warn,
+  )
+));
+
+$Website-dark-theme: mat-dark-theme((
+  color: (
+    primary: $Website-primary,
+    accent: $Website-accent,
+    warn: $Website-warn,
+  )
+));
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -28,6 +42,25 @@ $Website-dark-theme: mat-dark-theme($Website-primary, $Website-accent, $Website-
 @include angular-material-theme($Website-theme);
 
 .dark-theme {   
-    @include angular-material-theme($Website-dark-theme);
+  @include angular-material-theme($Website-dark-theme);
 }
 
+/* You can add global styles to this file, and also import other style files */
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.dark-theme {
+  color: #FFFFFF;
+}
