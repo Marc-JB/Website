@@ -34,7 +34,7 @@ jobs:
 
       # Build
       - name: Build project
-        run: ng build --prod --base-href https://marc-apps.nl/
+        run: ng build --configuration production --base-href https://marc-apps.nl/
 
       # Deploy to GitHub Pages
       - name: Copy README, CNAME, etc.
