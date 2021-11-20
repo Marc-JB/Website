@@ -14,6 +14,8 @@ export class HeaderComponent implements OnInit {
   @Input() menu: any = null;
   @Input() maxWidth = 'auto';
 
+  constructor() {}
+
   get isTransparent(): boolean {
     return this.headerStyle === HeaderStyle.transparent || this.headerStyle === HeaderStyle.transparentDark;
   }
@@ -21,8 +23,6 @@ export class HeaderComponent implements OnInit {
   get maximumWidth(): string {
     return `max-width: ${this.maxWidth};`;
   }
-
-  constructor() {}
 
   ngOnInit(): void {}
 }
