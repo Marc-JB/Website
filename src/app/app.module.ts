@@ -18,26 +18,31 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HeaderComponent } from './header/header.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    PrivacyPolicyComponent,
-    PageNotFoundComponent,
-    HeaderComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatIconModule,
-    MatTooltipModule,
-    MatMenuModule,
-    MatCardModule,
-    BrowserAnimationsModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HomeComponent,
+        PrivacyPolicyComponent,
+        PageNotFoundComponent,
+        HeaderComponent
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        MatToolbarModule,
+        MatButtonModule,
+        MatIconModule,
+        MatTooltipModule,
+        MatMenuModule,
+        MatCardModule,
+        BrowserAnimationsModule,
+        ServiceWorkerModule.register('ngsw-worker.js', {
+            enabled: environment.production,
+            // Register the ServiceWorker as soon as the application is stable
+            // or after 30 seconds (whichever comes first).
+            registrationStrategy: 'registerWhenStable:30000'
+        })
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

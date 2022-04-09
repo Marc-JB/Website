@@ -11,20 +11,21 @@ jobs:
 
       # Checkout
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       # Set up Node.js
       - name: Use Node.js 16.x
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: '16'
+          cache: 'npm'
 
       # Cache
-      - uses: actions/cache@v2
+      - name: Angular cache
+        uses: actions/cache@v3
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: ${{ runner.os }}-node-
+          path: ./.angular/cache
+          key: ${{ runner.os }}-angular
 
       # Install dependencies
       - name: Install dependencies
@@ -34,7 +35,7 @@ jobs:
 
       # Build
       - name: Build project
-        run: ng build --configuration production --base-href https://marc-apps.nl/
+        run: ng build --base-href https://marc-apps.nl/
 
       # Deploy to GitHub Pages
       - name: Copy README, CNAME, etc.
