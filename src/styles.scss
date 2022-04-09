@@ -1,6 +1,6 @@
 // Custom Theming for Angular Material
-@use '@angular/material' as mat;
 // For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -20,19 +20,19 @@ $Website-warn: mat.define-palette(mat.$red-palette);
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
 $Website-theme: mat.define-light-theme((
-  color: (
-    primary: $Website-primary,
-    accent: $Website-accent,
-    warn: $Website-warn,
-  )
+    color: (
+        primary: $Website-primary,
+        accent: $Website-accent,
+        warn: $Website-warn,
+    )
 ));
 
 $Website-dark-theme: mat.define-dark-theme((
-  color: (
-    primary: $Website-primary,
-    accent: $Website-accent,
-    warn: $Website-warn,
-  )
+    color: (
+        primary: $Website-primary,
+        accent: $Website-accent,
+        warn: $Website-warn,
+    )
 ));
 
 // Include theme styles for core and each component used in your app.
@@ -40,26 +40,26 @@ $Website-dark-theme: mat.define-dark-theme((
 // that you are using.
 @include mat.all-component-themes($Website-theme);
 
-.dark-theme {   
-  @include mat.all-component-colors($Website-dark-theme);
+.dark-theme {
+    @include mat.all-component-colors($Website-dark-theme);
 }
 
 /* You can add global styles to this file, and also import other style files */
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html, body {
-  max-width: 100%;
-  overflow-x: hidden;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .dark-theme {
-  color: #FFFFFF;
+    color: #FFFFFF;
 }

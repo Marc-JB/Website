@@ -1,28 +1,28 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 export enum HeaderStyle {
-  primary, primaryElevated, transparent, transparentDark
+    primary, primaryElevated, transparent, transparentDark
 }
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  @Input() headerStyle: HeaderStyle = HeaderStyle.primaryElevated;
-  @Input() menu: any = null;
-  @Input() maxWidth = 'auto';
+    @Input() headerStyle: HeaderStyle = HeaderStyle.primaryElevated;
+    @Input() menu: any = null;
+    @Input() maxWidth = 'auto';
 
-  constructor() {}
+    constructor() { }
 
-  get isTransparent(): boolean {
-    return this.headerStyle === HeaderStyle.transparent || this.headerStyle === HeaderStyle.transparentDark;
-  }
+    get isTransparent(): boolean {
+        return this.headerStyle === HeaderStyle.transparent || this.headerStyle === HeaderStyle.transparentDark;
+    }
 
-  get maximumWidth(): string {
-    return `max-width: ${this.maxWidth};`;
-  }
+    get maximumWidth(): string {
+        return `max-width: ${this.maxWidth};`;
+    }
 
-  ngOnInit(): void {}
+    ngOnInit(): void { }
 }
