@@ -31,6 +31,8 @@ section.bingo-app-promo {
     grid-template-rows: auto 16px 1fr $bingo-background-bottom-margin;
     gap: 0px 16px;
     grid-auto-flow: row;
+    min-height: 550px;
+    max-height: 800px;
     height: calc(100vh - $bingo-background-bottom-margin);
     z-index: 10;
 
@@ -40,7 +42,7 @@ section.bingo-app-promo {
 
     @include mobile {
         grid-template-rows: auto minmax(0, 1fr) auto;
-        height: 90vh;
+        height: 85vh;
         gap: 16px 0px;
     }
 
