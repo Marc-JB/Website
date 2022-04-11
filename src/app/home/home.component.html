@@ -1,5 +1,4 @@
 <header>
-    <app-header [menu]="appMenu" class="bingo-header" [headerStyle]="3"></app-header>
     <app-header [menu]="appMenu" class="main-header" [headerStyle]="0"></app-header>
 
     <mat-menu #appMenu="matMenu">
@@ -15,27 +14,27 @@
 </header>
 
 <main>
-    <section class="bingo dark-theme">
+    <section class="bingo-app-promo">
         <div class="background"></div>
-        <app-header [headerStyle]="2" style="position: relative; display: hidden;"></app-header>
-        <div class="content">
-            <div class="screenshot">
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC8AAABWCAYAAABfCs+lAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiQAABYkAZsVxhQAAAAmSURBVHhe7cEBAQAAAIIg/69uSEAAAAAAAAAAAAAAAAAAAABwrgY/fgABZJSb9AAAAABJRU5ErkJggg=="
-                alt="Bingo caller/number generator application screenshot"
-                onload="if(this.src.startsWith('data:image/png;base64,')) this.src='../../assets/BingoCallerScreenshot.png'" />
+
+        <app-header [menu]="appMenu" class="bingo-header" [headerStyle]="3"></app-header>
+
+        <div class="text dark-theme">
+            <h1>Bingo caller/number generator</h1>
+            <p>This app generates and calls random numbers for 75-number bingo.</p>
+            <div class="button-bar">
+                <a mat-stroked-button href="https://bingo.marc-apps.nl/index.html" target="_blank"
+                    rel="noopener noreferrer">Try now</a>
+                <a href='https://play.google.com/store/apps/details?id=com.marc.bingonumbergenerator&utm_source=https://marc-apps.nl/&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'
+                    target="_blank" rel="noopener noreferrer">
+                    <img class="play-badge" alt='Get it on Google Play' src='../../assets/play_badge.png' />
+                </a>
             </div>
-            <div class="text">
-                <h1>Bingo caller/number generator</h1>
-                <p>This app generates and calls random numbers for 75-number bingo.</p>
-                <div class="button-bar">
-                    <a mat-stroked-button href="https://bingo.marc-apps.nl/index.html" target="_blank"
-                        rel="noopener noreferrer">Try now</a>
-                    <a href='https://play.google.com/store/apps/details?id=com.marc.bingonumbergenerator&utm_source=https://marc-apps.nl/&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'
-                        target="_blank" rel="noopener noreferrer">
-                        <img class="play-badge" alt='Get it on Google Play' src='../../assets/play_badge.png' />
-                    </a>
-                </div>
-            </div>
+            <br>
+        </div>
+
+        <div class="screenshot">
+            <img src="../../assets/BingoCallerScreenshot.png" loading="lazy" alt="Bingo caller/number generator application screenshot" />
         </div>
     </section>
 

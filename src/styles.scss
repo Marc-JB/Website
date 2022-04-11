@@ -42,6 +42,7 @@ $Website-dark-theme: mat.define-dark-theme((
 
 .dark-theme {
     @include mat.all-component-colors($Website-dark-theme);
+    color: #FFFFFF;
 }
 
 /* You can add global styles to this file, and also import other style files */
@@ -58,8 +59,4 @@ html, body {
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
-.dark-theme {
-    color: #FFFFFF;
 }

@@ -1,17 +1,7 @@
-<mat-toolbar *ngIf="!isTransparent" color="primary" [class.mat-elevation-z2]="headerStyle === 1">
+<mat-toolbar [attr.color]="toolbarColor" [class.transparent]="isTransparent" [class.mat-elevation-z2]="hasElevation" [class.dark-theme]="isDarkThemed">
     <div [style]="maximumWidth">
         <span routerLink="/">Marc apps & software</span>
-        <span style="flex: 1 1 auto"></span>
-        <button *ngIf="menu" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu" matTooltip="Menu">
-            <mat-icon>more_vert</mat-icon>
-        </button>
-    </div>
-</mat-toolbar>
-
-<mat-toolbar *ngIf="isTransparent" class="transparent" [class.dark-theme]="headerStyle === 3">
-    <div [style]="maximumWidth">
-        <span routerLink="/">Marc apps & software</span>
-        <span style="flex: 1 1 auto"></span>
+        <span class="fill-space-horizontal"></span>
         <button *ngIf="menu" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu" matTooltip="Menu">
             <mat-icon>more_vert</mat-icon>
         </button>
