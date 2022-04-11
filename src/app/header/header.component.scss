@@ -4,14 +4,18 @@
 
 mat-toolbar {
     padding: 0;
+
+    > div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 0 auto;
+        height: 100%;
+        width: 100%;
+        padding: 0 16px;
+    }
 }
 
-mat-toolbar > div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 0 auto;
-    height: 100%;
-    width: 100%;
-    padding: 0 16px;
+.fill-space-horizontal {
+    flex: 1 1 auto;
 }

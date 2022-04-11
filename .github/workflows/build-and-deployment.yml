@@ -40,10 +40,10 @@ jobs:
       # Deploy to GitHub Pages
       - name: Copy README, CNAME, etc.
         run: |
-          sudo cp ./dist/index.html ./dist/404.html
-          sudo cp ./CNAME ./dist/CNAME || echo "No CNAME"
-          sudo cp ./README.md ./dist/README.md || echo "No README.md"
-          sudo cp ./LICENSE ./dist/LICENSE || echo "No LICENSE"
+          cp ./dist/index.html ./dist/404.html
+          cp ./CNAME ./dist/CNAME || echo "No CNAME"
+          cp ./README.md ./dist/README.md || echo "No README.md"
+          cp ./LICENSE ./dist/LICENSE || echo "No LICENSE"
 
       - name: Deploy to GitHub Pages
         if: success()

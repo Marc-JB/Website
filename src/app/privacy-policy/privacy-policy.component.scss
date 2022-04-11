@@ -2,10 +2,10 @@ main {
     padding: 32px 16px;
     margin: 0 auto;
     max-width: 1000px;
-}
 
-main > section, main > nav {
-    padding: 16px 0;
+    > section, > nav {
+        padding: 16px 0;
+    }
 }
 
 section > section {

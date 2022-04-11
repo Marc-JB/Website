@@ -1,21 +1,21 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { PageNotFoundComponent } from './page-not-found.component';
+import { HeaderComponent } from '../../app/header/header.component';
 
-describe('PageNotFoundComponent', () => {
+describe('HeaderComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             imports: [
                 RouterTestingModule
             ],
             declarations: [
-                PageNotFoundComponent
+                HeaderComponent
             ],
         }).compileComponents();
     });
 
     it('should create the app', () => {
-        const fixture = TestBed.createComponent(PageNotFoundComponent);
+        const fixture = TestBed.createComponent(HeaderComponent);
         const app = fixture.componentInstance;
         expect(app).toBeTruthy();
     });
