@@ -3,26 +3,20 @@ $bingo-background-color-end: #F44336;
 $bingo-background-bottom-margin: 100px;
 $primary-color: #009688;
 
-@mixin top-aligned-header($positioning-style) {
-    position: $positioning-style;
-    top: 0px;
-    right: 0px;
-    left: 0px;
-    width: 100%;
-    max-width: 100vw;
-}
-
 @mixin mobile {
     @media only screen and (max-width: 730px) {
         @content;
     }
 }
 
-header {
-    > .main-header {
-        @include top-aligned-header(fixed);
-        z-index: 5;
-    }
+header > .main-header {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    width: 100%;
+    max-width: 100vw;
+    z-index: 5;
 }
 
 section.bingo-app-promo {
@@ -132,6 +126,7 @@ main {
     margin: {
         left: 4px;
         right: 4px;
+        bottom: 8px;
     }
 }
 
