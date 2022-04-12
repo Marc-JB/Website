@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, Input, ViewChild, AfterViewInit } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import { MatToolbar } from '@angular/material/toolbar';
 
@@ -11,7 +11,7 @@ export enum HeaderStyle {
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements AfterViewInit {
     @Input() headerStyle: HeaderStyle = HeaderStyle.primaryElevated;
     @Input() menu: any = null;
     @Input() maxWidth = 'auto';
@@ -38,10 +38,6 @@ export class HeaderComponent implements OnInit {
     get toolbarColor(): ThemePalette {
         return this.isTransparent ? undefined : "primary"
     }
-
-    constructor() { }
-
-    ngOnInit(): void { }
 
     ngAfterViewInit(): void {
         if (this.toolbarElement !== undefined) {
