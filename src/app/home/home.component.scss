@@ -95,26 +95,41 @@ main {
         }
     }
 
-    > section.modules > .background {
-        position: absolute;
-        font-size: 20vw;
-        transform: rotate(-20deg);
-        color: $primary-color;
-        opacity: 0.1;
-        right: 4vw;
-        width: 20vw;
-        height: 20vw;
+    > section.modules {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-rows: auto 128px auto;
+        width: 100%;
+        grid-auto-flow: row;
 
         @include mobile {
-            display: none;
+            grid-template-rows: auto 16px auto;
         }
     }
 
-    > section.modules > .module, > section.apps > .app {
+    > section.modules > .background {
+        grid-area: 2 / 2 / span 2 / span 1;
+        fill: $primary-color;
+        opacity: 0.1;
+        width: 15vw;
+        height: 15vw;
+
+        @include mobile {
+            width: 25vw;
+            height: 25vw;
+        }
+    }
+
+    > section.modules > .content {
+        grid-area: 1 / 1 / span 2 / span 2;
+    }
+
+    > section.modules .module, > section.apps .app {
         display: inline-block;
         width: 400px;
         max-width: 100%;
         padding: 8px;
+        vertical-align: top;
     }
 }
 
