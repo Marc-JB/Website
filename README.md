@@ -1,9 +1,11 @@
 <div align="center">
 
+  ![Banner image](/docs/banner.webp?raw=true "Banner image")
   # Marc apps & software website
   Website for applications and other software created by Marc apps & software.
 
   [![Angular build & deployment](https://github.com/Marc-JB/Website/workflows/Angular%20build%20&%20deployment/badge.svg)](https://github.com/Marc-JB/Website/actions) 
+  [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Marc-JB_Website&metric=alert_status)](https://sonarcloud.io/project/overview?id=Marc-JB_Website) 
   [![License: CC BY-NC-ND 4.0](https://badgen.net/badge/license/CC%20BY-NC-ND%204.0/blue)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 </div>
