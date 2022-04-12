@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, Input, ViewChild, AfterViewInit } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
 import { MatToolbar } from '@angular/material/toolbar';
 
