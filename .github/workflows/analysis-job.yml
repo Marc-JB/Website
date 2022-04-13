@@ -60,7 +60,7 @@ jobs:
         uses: sonarsource/sonarqube-scan-action@v1.1.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_USER_HOME: ~/
+          SONAR_USER_HOME: /github/workspace/.sonar/
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
 
@@ -72,10 +72,10 @@ jobs:
           cd ~ || echo "~ Not Found"
           echo $PWD
           ls -A
-          cd / || echo "/ Not Found"
+          cd ~/work/Website/Website/ || echo "~/work/Website/Website. Not Found"
           echo $PWD
           ls -A
-          cd /opt/ || echo "/opt/ Not Found"
+          cd ~/work/Website/Website/.scannerwork/ || echo "~/work/Website/Website/.scannerwork/ Not Found"
           echo $PWD
           ls -A
           cd /opt/sonar-scanner/ || echo "/opt/sonar-scanner/ Not Found"
