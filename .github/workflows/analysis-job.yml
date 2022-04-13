@@ -67,11 +67,9 @@ jobs:
       # Cache
       - name: Check cache
         run: |
-          cd /home
+          cd /home/runner/
           ls
-          cd /runner
-          ls
-          cd /workspace
+          cd /github/workspace
           ls
           cd ~
           ls
