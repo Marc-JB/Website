@@ -41,7 +41,9 @@ jobs:
       - name: Cache SonarCloud packages
         uses: actions/cache@v3
         with:
-          path: ~/.sonar/cache
+          path: |
+            ~/.sonar/cache
+            ./.sonar/cache
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
 
@@ -63,24 +65,3 @@ jobs:
           SONAR_USER_HOME: /github/workspace/.sonar/
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-
-      # Cache
-      - name: Check cache
-        run: |
-          echo $PWD
-          ls -A
-          cd ~ || echo "~ Not Found"
-          echo $PWD
-          ls -A
-          cd ~/work/Website/Website/ || echo "~/work/Website/Website. Not Found"
-          echo $PWD
-          ls -A
-          cd ~/work/Website/Website/.scannerwork/ || echo "~/work/Website/Website/.scannerwork/ Not Found"
-          echo $PWD
-          ls -A
-          cd /opt/sonar-scanner/ || echo "/opt/sonar-scanner/ Not Found"
-          echo $PWD
-          ls -A
-          cd /home/runner/work/ || echo "/home/runner/work/ Not Found"
-          echo $PWD
-          ls -A
