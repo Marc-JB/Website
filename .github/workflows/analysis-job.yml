@@ -65,3 +65,14 @@ jobs:
           SONAR_USER_HOME: /github/workspace/.sonar/
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+
+      # Change cache permissions
+      - name: List permissions
+        run: |
+          ls -A -l
+          cd /.sonar/
+          ls -A -l
+          cd ..
+
+      - name: List user
+        run: id
