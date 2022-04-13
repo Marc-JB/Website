@@ -1,25 +1,28 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { PageNotFoundComponent } from '../../app/page-not-found/page-not-found.component';
 
-describe('PageNotFoundComponent', () => {
-    let component: PageNotFoundComponent;
-    let fixture: ComponentFixture<PageNotFoundComponent>;
+import { AppMenuComponent } from '../../app/app-menu/app-menu.component';
+import { MatMenuModule } from '@angular/material/menu';
+
+describe('AppMenuComponent', () => {
+    let component: AppMenuComponent;
+    let fixture: ComponentFixture<AppMenuComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             imports: [
-                RouterTestingModule
+                RouterTestingModule,
+                MatMenuModule
             ],
             declarations: [
-                PageNotFoundComponent
+                AppMenuComponent,
             ]
         })
             .compileComponents();
     });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(PageNotFoundComponent);
+        fixture = TestBed.createComponent(AppMenuComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

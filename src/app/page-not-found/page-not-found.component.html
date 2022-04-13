@@ -1,26 +1,12 @@
-<header>
-    <app-header [headerStyle]="2" [menu]="appMenu"></app-header>
+<div class="container">
+    <header>
+        <app-header [headerStyle]="2" [menuComponent]="appMenu"></app-header>
+        <app-menu #appMenu [showHome]="true"></app-menu>
+    </header>
 
-    <mat-menu #appMenu="matMenu">
-        <button mat-menu-item routerLink="/">
-            <mat-icon>home</mat-icon>
-            <span>Go home</span>
-        </button>
-        <button mat-menu-item routerLink="/privacy">
-            <mat-icon>policy</mat-icon>
-            <span>Privacy policy</span>
-        </button>
-        <a mat-menu-item href='./3rdpartylicenses.txt' target="_blank" rel="noopener noreferrer">
-            <mat-icon>description</mat-icon>
-            <span>Open-source licenses</span>
-        </a>
-    </mat-menu>
-</header>
-
-<main>
-    <div>
+    <main>
         <img alt="404 page not found image" src="../../assets/PageNotFound404.svg">
         <h1>Page not found</h1>
         <button mat-stroked-button routerLink="/">Open the home page</button>
-    </div>
-</main>
+    </main>
+</div>

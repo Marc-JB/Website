@@ -1,11 +1,22 @@
-name: Angular build & deployment
+name: Angular Release
 
 on:
   push:
     branches: [ main ]
+  workflow_dispatch:
+
+concurrency:
+  group: angular-release-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
+  analysis:
+    uses: ./.github/workflows/analysis-job.yml
+    secrets:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+
+  release:
     runs-on: ubuntu-latest
     steps:
 

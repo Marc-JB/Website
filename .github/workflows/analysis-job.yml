@@ -1,0 +1,64 @@
+name: Angular Test & Analysis
+
+on:
+  workflow_call:
+    secrets:
+      SONAR_TOKEN:
+        required: true
+      SONAR_HOST_URL:
+        required: true
+
+concurrency:
+  group: angular-analysis-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+
+      # Checkout
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
+
+      # Set up Node.js
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'npm'
+
+      # Cache
+      - name: Angular cache
+        uses: actions/cache@v3
+        with:
+          path: ./.angular/cache
+          key: ${{ runner.os }}-angular
+
+      # Restore SonarQube Cache
+      - name: Cache SonarCloud packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.sonar/cache
+          key: ${{ runner.os }}-sonar
+          restore-keys: ${{ runner.os }}-sonar
+
+      # Install dependencies
+      - name: Install dependencies
+        run: |
+          npm install -g @angular/cli
+          npm ci
+
+      # Test
+      - name: Test project
+        run: ng test --browsers=ChromeHeadless --watch=false --code-coverage
+
+      # Scan
+      - name: SonarQube Scan
+        uses: sonarsource/sonarqube-scan-action@v1.1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}

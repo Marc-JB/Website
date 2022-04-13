@@ -1,8 +1,11 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HomeComponent } from '../../app/home/home.component';
 
 describe('HomeComponent', () => {
+    let component: HomeComponent;
+    let fixture: ComponentFixture<HomeComponent>;
+
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             imports: [
@@ -10,13 +13,18 @@ describe('HomeComponent', () => {
             ],
             declarations: [
                 HomeComponent
-            ],
-        }).compileComponents();
+            ]
+        })
+            .compileComponents();
     });
 
-    it('should create the app', () => {
-        const fixture = TestBed.createComponent(HomeComponent);
-        const app = fixture.componentInstance;
-        expect(app).toBeTruthy();
+    beforeEach(() => {
+        fixture = TestBed.createComponent(HomeComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
+
+    it('should create', () => {
+        expect(component).toBeTruthy();
     });
 });

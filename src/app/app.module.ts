@@ -16,6 +16,7 @@ import { HomeComponent } from './home/home.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HeaderComponent } from './header/header.component';
+import { AppMenuComponent } from './app-menu/app-menu.component';
 
 @NgModule({
     declarations: [
@@ -23,7 +24,8 @@ import { HeaderComponent } from './header/header.component';
         HomeComponent,
         PrivacyPolicyComponent,
         PageNotFoundComponent,
-        HeaderComponent
+        HeaderComponent,
+        AppMenuComponent
     ],
     imports: [
         BrowserModule,
