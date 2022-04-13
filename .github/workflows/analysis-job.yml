@@ -67,9 +67,14 @@ jobs:
       # Cache
       - name: Check cache
         run: |
-          cd /home/runner/
+          echo $PWD
           ls
-          cd /github/workspace
+          cd ~ || echo "~ Not Found"
+          echo $PWD
           ls
-          cd ~
+          cd /home/runner/ || echo "/home/runner/ Not Found"
+          echo $PWD
+          ls
+          cd /github/workspace || echo "/github/workspace Not Found"
+          echo $PWD
           ls
