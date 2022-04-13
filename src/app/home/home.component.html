@@ -1,23 +1,13 @@
 <header>
-    <app-header [menu]="appMenu" class="main-header" [headerStyle]="0"></app-header>
-
-    <mat-menu #appMenu="matMenu">
-        <button mat-menu-item routerLink="/privacy">
-            <mat-icon>policy</mat-icon>
-            <span>Privacy policy</span>
-        </button>
-        <a mat-menu-item href='./3rdpartylicenses.txt' target="_blank" rel="noopener noreferrer">
-            <mat-icon>description</mat-icon>
-            <span>Open-source licenses</span>
-        </a>
-    </mat-menu>
+    <app-header [menuComponent]="appMenu" class="main-header" [headerStyle]="0"></app-header>
+    <app-menu #appMenu [showHome]="false"></app-menu>
 </header>
 
 <main>
     <section class="bingo-app-promo">
         <div class="background"></div>
 
-        <app-header [menu]="appMenu" class="bingo-header" [headerStyle]="3"></app-header>
+        <app-header [menuComponent]="appMenu" class="bingo-header" [headerStyle]="3"></app-header>
 
         <div class="text dark-theme">
             <h1>Bingo caller/number generator</h1>
