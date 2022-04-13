@@ -70,9 +70,19 @@ jobs:
       - name: List permissions
         run: |
           ls -A -l
-          cd /.sonar/
+          cd ./.sonar/
           ls -A -l
           cd ..
 
       - name: List user
         run: id
+
+      - name: Change cache permissions
+        run: sudo chown runner ./.sonar/
+
+      - name: List permissions
+        run: |
+          ls -A -l
+          cd ./.sonar/
+          ls -A -l
+          cd ..
