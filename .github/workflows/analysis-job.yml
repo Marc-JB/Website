@@ -65,3 +65,15 @@ jobs:
           SONAR_USER_HOME: /.sonar/
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+
+      # Cache
+      - name: Check cache
+        run: |
+          cd /
+          ls
+          cd /github
+          ls
+          cd /workspace
+          ls
+          cd ~
+          ls
