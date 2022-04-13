@@ -5,6 +5,8 @@ on:
     secrets:
       SONAR_TOKEN:
         required: true
+      SONAR_HOST_URL:
+        required: true
 
 concurrency:
   group: angular-analysis-${{ github.ref }}
@@ -59,3 +61,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
