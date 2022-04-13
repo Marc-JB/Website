@@ -69,7 +69,7 @@ jobs:
       # Cache
       - name: Check cache
         run: |
-          cd /
+          cd /home
           ls
           cd /github
           ls
