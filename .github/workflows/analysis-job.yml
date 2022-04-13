@@ -68,13 +68,19 @@ jobs:
       - name: Check cache
         run: |
           echo $PWD
-          ls
+          ls -A
           cd ~ || echo "~ Not Found"
           echo $PWD
-          ls
-          cd /home/runner/ || echo "/home/runner/ Not Found"
+          ls -A
+          cd / || echo "/ Not Found"
           echo $PWD
-          ls
-          cd /github/workspace || echo "/github/workspace Not Found"
+          ls -A
+          cd /opt/ || echo "/opt/ Not Found"
           echo $PWD
-          ls
+          ls -A
+          cd /opt/sonar-scanner/ || echo "/opt/sonar-scanner/ Not Found"
+          echo $PWD
+          ls -A
+          cd /home/runner/work/ || echo "/home/runner/work/ Not Found"
+          echo $PWD
+          ls -A
