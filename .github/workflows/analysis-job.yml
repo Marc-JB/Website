@@ -41,7 +41,9 @@ jobs:
       - name: Cache SonarCloud packages
         uses: actions/cache@v3
         with:
-          path: ~/.sonar/cache
+          path: |
+            ~/.sonar/cache
+            /github/workspace/.sonar/cache
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
 
@@ -60,6 +62,6 @@ jobs:
         uses: sonarsource/sonarqube-scan-action@v1.1.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_USER_HOME: $HOME/.sonar/
+          SONAR_USER_HOME: /.sonar/
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
