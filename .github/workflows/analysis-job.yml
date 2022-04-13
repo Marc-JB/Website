@@ -67,19 +67,5 @@ jobs:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
 
       # Change cache permissions
-      - name: List permissions
-        run: |
-          ls -A -l
-          cd ./.sonar/
-          ls -A -l
-          cd ..
-
       - name: Change cache permissions
         run: sudo chown -R runner:docker ./.sonar/
-
-      - name: List permissions
-        run: |
-          ls -A -l
-          cd ./.sonar/
-          ls -A -l
-          cd ..
