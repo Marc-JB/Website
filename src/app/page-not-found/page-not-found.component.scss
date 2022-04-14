@@ -21,6 +21,10 @@
             max-height: 50vh;
             opacity: 0.6;
             margin-bottom: 16px;
+
+            @media (prefers-color-scheme: dark) {
+                display: none;
+            }
         }
     }
 }

@@ -1,7 +1,9 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @use '@angular/material' as mat;
+
 // Plus imports for other components in your app.
+@use 'sass:map';
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
@@ -11,41 +13,77 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$Website-primary: mat.define-palette(mat.$teal-palette);
-$Website-accent: mat.define-palette(mat.$indigo-palette);
+$primary-palette: mat.$teal-palette;
+$primary-palette-defined: mat.define-palette($primary-palette);
+$accent-palette: mat.$indigo-palette;
+$accent-palette-defined: mat.define-palette($accent-palette);
 
 // The warn palette is optional (defaults to red).
-$Website-warn: mat.define-palette(mat.$red-palette);
+$warn-palette-defined: mat.define-palette(mat.$red-palette);
+$link-palette-primary: mat.$blue-palette;
+$link-palette-secondary: mat.$cyan-palette;
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$Website-theme: mat.define-light-theme((
+$light-theme-defined: mat.define-light-theme((
     color: (
-        primary: $Website-primary,
-        accent: $Website-accent,
-        warn: $Website-warn,
+        primary: $primary-palette-defined,
+        accent: $accent-palette-defined,
+        warn: $warn-palette-defined
     )
 ));
 
-$Website-dark-theme: mat.define-dark-theme((
+$dark-theme-defined: mat.define-dark-theme((
     color: (
-        primary: $Website-primary,
-        accent: $Website-accent,
-        warn: $Website-warn,
+        primary: $primary-palette-defined,
+        accent: $accent-palette-defined,
+        warn: $warn-palette-defined
     )
 ));
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-component-themes($Website-theme);
+@include mat.all-component-themes($light-theme-defined);
 
-.dark-theme {
-    @include mat.all-component-colors($Website-dark-theme);
-    color: #FFFFFF;
+@mixin dark-theme {
+    @media (prefers-color-scheme: dark) {
+        @content;
+    }
+
+    .dark-theme {
+        @content;
+    }
+}
+
+@include dark-theme {
+    @include mat.all-component-colors($dark-theme-defined);
 }
 
 /* You can add global styles to this file, and also import other style files */
+a:not(.mat-menu-item):not(.mat-button-base) {
+    &:link, &:visited {
+        text-decoration: none;
+        color: mat.get-color-from-palette($link-palette-primary, 800);
+    }
+
+    &:hover, &:active {
+        text-decoration: underline;
+        color: mat.get-color-from-palette($link-palette-secondary, 800);
+    }
+}
+
+@include dark-theme {
+    a:not(.mat-menu-item):not(.mat-button-base)  {
+        &:link, &:visited {
+            color: mat.get-color-from-palette($link-palette-primary, 300);
+        }
+
+        &:hover, &:active {
+            color: mat.get-color-from-palette($link-palette-secondary, 300);
+        }
+    }
+}
 
 * {
     box-sizing: border-box;
