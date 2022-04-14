@@ -6,8 +6,8 @@ main {
     > section, > nav {
         padding: 16px 0;
     }
-}
 
-section > section {
-    padding: 8px 0;
+    > section > section {
+        padding: 8px 0;
+    }
 }
