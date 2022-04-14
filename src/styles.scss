@@ -22,6 +22,11 @@ $accent-palette-defined: mat.define-palette($accent-palette);
 $warn-palette-defined: mat.define-palette(mat.$red-palette);
 $link-palette-primary: mat.$blue-palette;
 $link-palette-secondary: mat.$cyan-palette;
+$primary-color: mat.get-color-from-palette($primary-palette, 500);
+
+:root {
+    --primary-color: #{$primary-color};
+}
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
