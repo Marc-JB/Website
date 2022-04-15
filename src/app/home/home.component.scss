@@ -1,7 +1,3 @@
-$bingo-background-color-start: #B71C1C;
-$bingo-background-color-end: #F44336;
-$bingo-background-bottom-margin: 100px;
-
 @mixin mobile {
     @media only screen and (max-width: 730px) {
         @content;
@@ -21,24 +17,37 @@ header > .main-header {
 section.bingo-app-promo {
     display: grid;
     grid-template-columns: 16px 1fr 1fr 16px;
-    grid-template-rows: auto 16px 1fr $bingo-background-bottom-margin;
-    gap: 0px 16px;
+    grid-template-rows: auto 16px minmax(0, 1fr);
+    gap: 0px 32px;
     grid-auto-flow: row;
     min-height: 550px;
     max-height: 800px;
-    height: calc(100vh - $bingo-background-bottom-margin);
-    background-color: transparent !important;
+    height: calc(100vh - 64px);
 
     @include mobile {
         grid-template-rows: auto minmax(0, 1fr) auto;
-        height: 85vh;
-        gap: 16px 0px;
+        height: 110vh;
+        gap: 0px 0px;
     }
 
     .background {
         grid-area: 1 / 1 / span 3 / span 4;
 
-        background: linear-gradient(145deg, $bingo-background-color-start, $bingo-background-color-end);
+        background-image: url("^assets/bingo-promo-background-light-half.webp");
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @include mobile {
+            background-image: url("^assets/bingo-promo-background-light-quarter.webp");
+
+            @media (prefers-color-scheme: dark) {
+                background-image: url("^assets/bingo-promo-background-dark-quarter.webp");
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            background-image: url("^assets/bingo-promo-background-dark-half.webp");
+        }
     }
 
     .bingo-header {
@@ -50,7 +59,7 @@ section.bingo-app-promo {
     }
 
     .screenshot {
-        grid-area: 3 / 2 / span 2 / span 1;
+        grid-area: 3 / 2 / span 1 / span 1;
 
         @include mobile {
             grid-area: 2 / 2 / span 1 / span 2;
@@ -60,6 +69,7 @@ section.bingo-app-promo {
             display: block;
             margin-left: auto;
             height: 100%;
+            padding: 8px 0px;
 
             @include mobile {
                 margin: auto;
@@ -70,13 +80,31 @@ section.bingo-app-promo {
 
     .text {
         grid-area: 3 / 3 / span 1 / span 1;
+        display: flex;
+        align-items: center;
 
         @include mobile {
             grid-area: 3 / 2 / span 1 / span 2;
+            align-items: baseline;
+            justify-content: center;
+            margin: 16px 0px;
         }
 
-        > * {
-            max-width: 400px;
+        > div {
+            max-width: 464px;
+            background-color: rgba(#FAFAFA, 40%);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 16px;
+            padding: 16px;
+
+            @media (prefers-color-scheme: dark) {
+                background-color: rgba(#303030, 40%);
+            }
+
+            @include mobile {
+                padding: 8px;
+            }
         }
     }
 }
@@ -130,10 +158,6 @@ main {
         padding: 8px;
         vertical-align: top;
     }
-}
-
-.dark-theme .mat-stroked-button:not([disabled]) {
-    border-color: rgba(255, 255, 255, 0.4);
 }
 
 .button-bar > a {
