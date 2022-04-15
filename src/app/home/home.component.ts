@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
@@ -7,6 +7,10 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
     styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+    private static headerScrollTriggerPx: number = 48
+
+    showFixedHeader: boolean = false
+
     constructor(private router: Router, private route: ActivatedRoute) { }
 
     ngOnInit(): void {
@@ -15,5 +19,11 @@ export class HomeComponent implements OnInit {
                 this.router.navigate(['/privacy-policy']);
             }
         });
+    }
+
+    @HostListener("window:scroll")
+    onScroll() {
+        this.showFixedHeader = document.body.scrollTop > HomeComponent.headerScrollTriggerPx
+            || document.documentElement.scrollTop > HomeComponent.headerScrollTriggerPx
     }
 }

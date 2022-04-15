@@ -17,6 +17,9 @@ import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.componen
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HeaderComponent } from './header/header.component';
 import { AppMenuComponent } from './app-menu/app-menu.component';
+import { LicensesComponent } from './licenses/licenses.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
     declarations: [
@@ -25,10 +28,12 @@ import { AppMenuComponent } from './app-menu/app-menu.component';
         PrivacyPolicyComponent,
         PageNotFoundComponent,
         HeaderComponent,
-        AppMenuComponent
+        AppMenuComponent,
+        LicensesComponent
     ],
     imports: [
         BrowserModule,
+        HttpClientModule,
         AppRoutingModule,
         MatToolbarModule,
         MatButtonModule,
@@ -36,6 +41,7 @@ import { AppMenuComponent } from './app-menu/app-menu.component';
         MatTooltipModule,
         MatMenuModule,
         MatCardModule,
+        MatProgressSpinnerModule,
         BrowserAnimationsModule,
         ServiceWorkerModule.register('ngsw-worker.js', {
             enabled: environment.production,

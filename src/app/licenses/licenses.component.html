@@ -1,0 +1,12 @@
+<header>
+    <app-header [menuComponent]="appMenu" [headerStyle]="1" [maxWidth]="'1000px'"></app-header>
+    <app-menu #appMenu [showHome]="true"></app-menu>
+</header>
+
+<main>
+    <h1>Open source licenses</h1>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <pre *ngIf="!isLoading">
+        <code [innerText]="text"></code>
+    </pre>
+</main>
