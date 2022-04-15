@@ -1,5 +1,5 @@
 <header>
-    <app-header [menuComponent]="appMenu" class="main-header" [headerStyle]="0"></app-header>
+    <app-header *ngIf="showFixedHeader" [menuComponent]="appMenu" class="main-header" [headerStyle]="1"></app-header>
     <app-menu #appMenu [showHome]="false"></app-menu>
 </header>
 
