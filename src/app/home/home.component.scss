@@ -16,7 +16,7 @@ header > .main-header {
 
 section.bingo-app-promo {
     display: grid;
-    grid-template-columns: 16px 1fr 1fr 16px;
+    grid-template-columns: 16px minmax(0, 1fr) minmax(0, 1fr) 16px;
     grid-template-rows: auto 16px minmax(0, 1fr);
     gap: 0px 32px;
     grid-auto-flow: row;
@@ -70,6 +70,8 @@ section.bingo-app-promo {
             margin-left: auto;
             height: 100%;
             padding: 8px 0px;
+            max-width: 100%;
+            object-fit: contain;
 
             @include mobile {
                 margin: auto;
