@@ -5,6 +5,7 @@
         }
     ],
     "settings": {
-        "files.autoSave": "off"
+        "files.autoSave": "off",
+        "editor.tabSize": 4
     }
 }
