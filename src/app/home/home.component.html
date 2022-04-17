@@ -10,7 +10,7 @@
         <app-header [menuComponent]="appMenu" class="bingo-header" [headerStyle]="3"></app-header>
 
         <div class="text">
-            <div>
+            <div class="acrylic">
                 <h1>Bingo caller/number generator</h1>
                 <p>This app generates and calls random numbers for 75-number bingo.</p>
                 <div class="button-bar">
@@ -36,9 +36,11 @@
         <h1>Other apps</h1>
         <div class="app">
             <mat-card>
-                <mat-card-title>TraiNL <sup class="tag primary">preview</sup>
-                </mat-card-title>
-                <mat-card-subtitle>For Android</mat-card-subtitle>
+                <mat-card-header>
+                    <div mat-card-avatar class="trainl-icon"></div>
+                    <mat-card-title>TraiNL <sup class="tag primary">preview</sup></mat-card-title>
+                    <mat-card-subtitle>For Android</mat-card-subtitle>
+                </mat-card-header>
                 <mat-card-content>
                     <p>Application for viewing train departures and disruptions in The Netherlands.</p>
                 </mat-card-content>
@@ -51,8 +53,10 @@
 
         <div class="app">
             <mat-card>
-                <mat-card-title>Files</mat-card-title>
-                <mat-card-subtitle>For Android</mat-card-subtitle>
+                <mat-card-header>
+                    <mat-card-title>Files</mat-card-title>
+                    <mat-card-subtitle>For Android</mat-card-subtitle>
+                </mat-card-header>
                 <mat-card-content>
                     <p>Shortcut to the system file manager of Android.</p>
                 </mat-card-content>
@@ -73,8 +77,10 @@
             <h1>Modules</h1>
             <div class="module">
                 <mat-card>
-                    <mat-card-title>TextToSpeechKt</mat-card-title>
-                    <mat-card-subtitle>For Android & web</mat-card-subtitle>
+                    <mat-card-header>
+                        <mat-card-title>TextToSpeechKt</mat-card-title>
+                        <mat-card-subtitle>For Android & web</mat-card-subtitle>
+                    </mat-card-header>
                     <mat-card-content>
                         <p>A multiplatform TextToSpeech library for Android and web, written in Kotlin.</p>
                     </mat-card-content>
