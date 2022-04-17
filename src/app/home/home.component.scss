@@ -94,19 +94,30 @@ section.bingo-app-promo {
 
         > div {
             max-width: 464px;
-            background-color: rgba(#FAFAFA, 40%);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
             border-radius: 16px;
             padding: 16px;
-
-            @media (prefers-color-scheme: dark) {
-                background-color: rgba(#303030, 40%);
-            }
 
             @include mobile {
                 padding: 8px;
             }
+        }
+    }
+}
+
+.acrylic {
+    background-color: rgba(#FAFAFA, 90%);
+
+    @media (prefers-color-scheme: dark) {
+        background-color: rgba(#303030, 90%);
+    }
+
+    @supports (backdrop-filter: blur(30px) saturate(125%)) or (-webkit-backdrop-filter: blur(30px) saturate(125%)) {
+        background-color: rgba(#FAFAFA, 30%);
+        backdrop-filter: blur(30px) saturate(125%);
+        -webkit-backdrop-filter: blur(30px) saturate(125%);
+
+        @media (prefers-color-scheme: dark) {
+            background-color: rgba(#303030, 30%);
         }
     }
 }
