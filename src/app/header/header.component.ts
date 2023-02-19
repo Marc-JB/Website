@@ -1,6 +1,6 @@
 import { Component, Input, ViewChild, AfterViewInit } from '@angular/core';
 import { ThemePalette } from '@angular/material/core';
-import { MatMenu } from '@angular/material/menu';
+import { MatLegacyMenu as MatMenu } from '@angular/material/legacy-menu';
 import { MatToolbar } from '@angular/material/toolbar';
 
 export enum HeaderStyle {
