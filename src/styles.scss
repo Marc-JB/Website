@@ -71,7 +71,7 @@ $dark-theme-defined: mat.define-dark-theme((
 }
 
 @include dark-theme {
-    @include mat.all-legacy-component-colorsmat.all-legacy-component-colors($dark-theme-defined);
+    @include mat.all-legacy-component-colors($dark-theme-defined);
 }
 
 /* You can add global styles to this file, and also import other style files */
