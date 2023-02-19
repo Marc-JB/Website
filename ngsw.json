@@ -1,0 +1,85 @@
+{
+  "configVersion": 1,
+  "timestamp": 1676831788278,
+  "index": "https://marc-apps.nl/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://marc-apps.nl/favicon.ico",
+        "https://marc-apps.nl/index.html",
+        "https://marc-apps.nl/main.711bcb10f746a675.js",
+        "https://marc-apps.nl/polyfills.a6c874b3d2f6ea38.js",
+        "https://marc-apps.nl/runtime.ec7b2dd0cf8395ea.js",
+        "https://marc-apps.nl/styles.4772df9f33ad66fb.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://marc-apps.nl/3rdpartylicenses.txt",
+        "https://marc-apps.nl/assets/PageNotFound404.svg",
+        "https://marc-apps.nl/assets/bingo-promo-background-dark-full.webp",
+        "https://marc-apps.nl/assets/bingo-promo-background-dark-half.webp",
+        "https://marc-apps.nl/assets/bingo-promo-background-dark-quarter.webp",
+        "https://marc-apps.nl/assets/bingo-promo-background-light-full.webp",
+        "https://marc-apps.nl/assets/bingo-promo-background-light-half.webp",
+        "https://marc-apps.nl/assets/bingo-promo-background-light-quarter.webp",
+        "https://marc-apps.nl/assets/bingo-promo-image.webp",
+        "https://marc-apps.nl/assets/play_badge.webp",
+        "https://marc-apps.nl/assets/trainl-icon.webp"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "https://marc-apps.nl/3rdpartylicenses.txt": "4fe766eb65d84d4282dfba8e2e498aacee0c491a",
+    "https://marc-apps.nl/assets/PageNotFound404.svg": "5cdbd440e25be110b5309ce6eb5b11a695b5be07",
+    "https://marc-apps.nl/assets/bingo-promo-background-dark-full.webp": "0a345738e9094a2697d73b3c4f231acdb6799627",
+    "https://marc-apps.nl/assets/bingo-promo-background-dark-half.webp": "252e9c1d4a26828b607b12dfe7c492d96a5db370",
+    "https://marc-apps.nl/assets/bingo-promo-background-dark-quarter.webp": "3534f35ab48d278329e895b6587b866f6c0312f3",
+    "https://marc-apps.nl/assets/bingo-promo-background-light-full.webp": "201c642c0b73691c6271e267c03ecc682cacfd76",
+    "https://marc-apps.nl/assets/bingo-promo-background-light-half.webp": "e0905b4dbf6f03a78615f4444d8c43c717698b78",
+    "https://marc-apps.nl/assets/bingo-promo-background-light-quarter.webp": "872147a3b26658f790bd0d9d9ca1fa0ec1c5649b",
+    "https://marc-apps.nl/assets/bingo-promo-image.webp": "9b4b49274cdd2c69c8b38de9b7f00e6de1f9ebb6",
+    "https://marc-apps.nl/assets/play_badge.webp": "605004a9ff921e72e1d773c10654b594735de6fe",
+    "https://marc-apps.nl/assets/trainl-icon.webp": "d1cb25a3dd57aba206b4d14ffa9a752d23bc3be7",
+    "https://marc-apps.nl/favicon.ico": "172a38b69bd232c46e6354d91225e245b3332352",
+    "https://marc-apps.nl/index.html": "cea7e8ffc932f171a46b71faa12ff840ba920537",
+    "https://marc-apps.nl/main.711bcb10f746a675.js": "219ca0d517d29d5166c1ab616ad826a036e4f748",
+    "https://marc-apps.nl/polyfills.a6c874b3d2f6ea38.js": "9c465c3cb74ca07b08ffadc67252230e626abdeb",
+    "https://marc-apps.nl/runtime.ec7b2dd0cf8395ea.js": "5f7f96262d9dbfc02b3f652d849df2a0729a5487",
+    "https://marc-apps.nl/styles.4772df9f33ad66fb.css": "84f86d35ba76671f113206c9196122ec27a19c94"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
