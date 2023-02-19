@@ -15,9 +15,9 @@
 //  If you specify typography styles for the components you use elsewhere, you should delete this line.
 //  If you don't need the default component typographies but still want the hierarchy styles,
 //  you can delete this line and instead use:
-//    `@include mat.legacy-typography-hierarchy(mat.define-legacy-typography-config());`
-@include mat.all-legacy-component-typographies();
-@include mat.legacy-core();
+//    `@include mat.legacy-typography-hierarchy(mat.define-typography-config());`
+@include mat.all-component-typographies();
+@include mat.core();
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
@@ -58,7 +58,7 @@ $dark-theme-defined: mat.define-dark-theme((
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-legacy-component-themes($light-theme-defined);
+@include mat.all-component-themes($light-theme-defined);
 
 @mixin dark-theme {
     @media (prefers-color-scheme: dark) {
@@ -71,11 +71,11 @@ $dark-theme-defined: mat.define-dark-theme((
 }
 
 @include dark-theme {
-    @include mat.all-legacy-component-colors($dark-theme-defined);
+    @include mat.all-component-colors($dark-theme-defined);
 }
 
 /* You can add global styles to this file, and also import other style files */
-a:not(.mat-menu-item):not(.mat-button-base) {
+a:not(.mat-mdc-menu-item):not(.mat-mdc-button-base) {
     &:link, &:visited {
         text-decoration: none;
         color: mat.get-color-from-palette($link-palette-primary, 800);
@@ -88,7 +88,7 @@ a:not(.mat-menu-item):not(.mat-button-base) {
 }
 
 @include dark-theme {
-    a:not(.mat-menu-item):not(.mat-button-base)  {
+    a:not(.mat-mdc-menu-item):not(.mat-mdc-button-base)  {
         &:link, &:visited {
             color: mat.get-color-from-palette($link-palette-primary, 300);
         }
