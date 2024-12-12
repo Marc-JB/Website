@@ -4,7 +4,8 @@ import { LicensesService } from '../licenses.service';
 @Component({
     selector: 'app-licenses',
     templateUrl: './licenses.component.html',
-    styleUrls: ['./licenses.component.scss']
+    styleUrls: ['./licenses.component.scss'],
+    standalone: false
 })
 export class LicensesComponent implements OnInit {
     public isLoading: boolean = true

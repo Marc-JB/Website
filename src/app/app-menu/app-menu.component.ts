@@ -4,7 +4,8 @@ import { MatMenu } from '@angular/material/menu';
 @Component({
     selector: 'app-menu',
     templateUrl: './app-menu.component.html',
-    styleUrls: ['./app-menu.component.scss']
+    styleUrls: ['./app-menu.component.scss'],
+    standalone: false
 })
 export class AppMenuComponent {
     @Input()
