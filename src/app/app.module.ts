@@ -18,10 +18,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HeaderComponent } from './header/header.component';
 import { AppMenuComponent } from './app-menu/app-menu.component';
 import { LicensesComponent } from './licenses/licenses.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
-@NgModule({
+@NgModule({ 
     declarations: [
         AppComponent,
         HomeComponent,
@@ -31,9 +31,9 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
         AppMenuComponent,
         LicensesComponent
     ],
+    bootstrap: [AppComponent], 
     imports: [
         BrowserModule,
-        HttpClientModule,
         AppRoutingModule,
         MatToolbarModule,
         MatButtonModule,
@@ -49,8 +49,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
             // or after 30 seconds (whichever comes first).
             registrationStrategy: 'registerWhenStable:30000'
         })
-    ],
-    providers: [],
-    bootstrap: [AppComponent]
+    ], 
+    providers: [provideHttpClient(withInterceptorsFromDi())] 
 })
 export class AppModule { }
