@@ -1,0 +1,22 @@
+<header>
+    <app-header [menuComponent]="appMenu" [headerStyle]="1" [maxWidth]="'1000px'"></app-header>
+    <app-menu #appMenu [showHome]="true"></app-menu>
+</header>
+
+<main>
+    <h1>Contact</h1>
+
+    <mat-form-field id="contact-reason">
+        <mat-label>Contact reason</mat-label>
+        <mat-select [(ngModel)]="selectedReason" required>
+          <mat-option value="App Question or Feedback">App Question or Feedback</mat-option>
+          <mat-option value="Privacy Policy">Privacy Policy</mat-option>
+          <mat-option value="Contact Request - Website Form">Other</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <br>
+
+    <a mat-raised-button color="primary" [href]="'mailto:marc.apps@outlook.com?subject=' + selectedReason" target="_blank"
+        rel="noopener noreferrer" [disabled]="!selectedReason">Send an e-mail</a>
+</main>
