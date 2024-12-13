@@ -33,20 +33,20 @@ section.bingo-app-promo {
     .background {
         grid-area: 1 / 1 / span 3 / span 4;
 
-        background-image: url("^assets/bingo-promo-background-light-half.webp");
+        background-image: url("/assets/bingo-promo-background-light-half.webp");
         background-repeat: no-repeat;
         background-size: cover;
 
         @include mobile {
-            background-image: url("^assets/bingo-promo-background-light-quarter.webp");
+            background-image: url("/assets/bingo-promo-background-light-quarter.webp");
 
             @media (prefers-color-scheme: dark) {
-                background-image: url("^assets/bingo-promo-background-dark-quarter.webp");
+                background-image: url("/assets/bingo-promo-background-dark-quarter.webp");
             }
         }
 
         @media (prefers-color-scheme: dark) {
-            background-image: url("^assets/bingo-promo-background-dark-half.webp");
+            background-image: url("/assets/bingo-promo-background-dark-half.webp");
         }
     }
 
@@ -202,6 +202,6 @@ a > .play-badge {
 }
 
 .trainl-icon {
-    background-image: url("^assets/trainl-icon.webp");
+    background-image: url("/assets/trainl-icon.webp");
     background-size: cover;
 }

@@ -17,21 +17,22 @@
 //  you can delete this line and instead use:
 //    `@include mat.legacy-typography-hierarchy(mat.define-typography-config());`
 @include mat.all-component-typographies();
-@include mat.core();
+@include mat.elevation-classes();
+@include mat.app-background();
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$primary-palette: mat.$teal-palette;
-$primary-palette-defined: mat.define-palette($primary-palette);
-$accent-palette: mat.$indigo-palette;
-$accent-palette-defined: mat.define-palette($accent-palette);
+$primary-palette: mat.$m2-teal-palette;
+$primary-palette-defined: mat.m2-define-palette($primary-palette);
+$accent-palette: mat.$m2-indigo-palette;
+$accent-palette-defined: mat.m2-define-palette($accent-palette);
 
 // The warn palette is optional (defaults to red).
-$warn-palette-defined: mat.define-palette(mat.$red-palette);
-$link-palette-primary: mat.$blue-palette;
-$link-palette-secondary: mat.$cyan-palette;
-$primary-color: mat.get-color-from-palette($primary-palette, 500);
+$warn-palette-defined: mat.m2-define-palette(mat.$m2-red-palette);
+$link-palette-primary: mat.$m2-blue-palette;
+$link-palette-secondary: mat.$m2-cyan-palette;
+$primary-color: mat.m2-get-color-from-palette($primary-palette, 500);
 
 :root {
     --primary-color: #{$primary-color};
@@ -39,7 +40,7 @@ $primary-color: mat.get-color-from-palette($primary-palette, 500);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$light-theme-defined: mat.define-light-theme((
+$light-theme-defined: mat.m2-define-light-theme((
     color: (
         primary: $primary-palette-defined,
         accent: $accent-palette-defined,
@@ -47,7 +48,7 @@ $light-theme-defined: mat.define-light-theme((
     )
 ));
 
-$dark-theme-defined: mat.define-dark-theme((
+$dark-theme-defined: mat.m2-define-dark-theme((
     color: (
         primary: $primary-palette-defined,
         accent: $accent-palette-defined,
@@ -78,23 +79,23 @@ $dark-theme-defined: mat.define-dark-theme((
 a:not(.mat-mdc-menu-item):not(.mat-mdc-button-base) {
     &:link, &:visited {
         text-decoration: none;
-        color: mat.get-color-from-palette($link-palette-primary, 800);
+        color: mat.m2-get-color-from-palette($link-palette-primary, 800);
     }
 
     &:hover, &:active {
         text-decoration: underline;
-        color: mat.get-color-from-palette($link-palette-secondary, 800);
+        color: mat.m2-get-color-from-palette($link-palette-secondary, 800);
     }
 }
 
 @include dark-theme {
     a:not(.mat-mdc-menu-item):not(.mat-mdc-button-base)  {
         &:link, &:visited {
-            color: mat.get-color-from-palette($link-palette-primary, 300);
+            color: mat.m2-get-color-from-palette($link-palette-primary, 300);
         }
 
         &:hover, &:active {
-            color: mat.get-color-from-palette($link-palette-secondary, 300);
+            color: mat.m2-get-color-from-palette($link-palette-secondary, 300);
         }
     }
 }

@@ -18,12 +18,15 @@
             "prefix": "app",
             "architect": {
                 "build": {
-                    "builder": "@angular-devkit/build-angular:browser",
+                    "builder": "@angular-devkit/build-angular:application",
                     "options": {
-                        "outputPath": "dist",
+                        "outputPath": {
+                          "base": "dist"
+                        },
                         "index": "src/index.html",
-                        "main": "src/main.ts",
-                        "polyfills": "src/polyfills.ts",
+                        "polyfills": [
+                          "src/polyfills.ts"
+                        ],
                         "tsConfig": "tsconfig.app.json",
                         "inlineStyleLanguage": "scss",
                         "assets": [
@@ -34,8 +37,8 @@
                             "src/styles.scss"
                         ],
                         "scripts": [],
-                        "serviceWorker": true,
-                        "ngswConfigPath": "ngsw-config.json"
+                        "serviceWorker": "ngsw-config.json",
+                        "browser": "src/main.ts"
                     },
                     "configurations": {
                         "production": {
@@ -60,9 +63,7 @@
                             "outputHashing": "all"
                         },
                         "development": {
-                            "buildOptimizer": false,
-                            "optimization": false,
-                            "vendorChunk": true,
+                          "optimization": false,
                             "extractLicenses": false,
                             "sourceMap": true,
                             "namedChunks": true
@@ -74,10 +75,10 @@
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "configurations": {
                         "production": {
-                            "browserTarget": "Website:build:production"
+                          "buildTarget": "Website:build:production"
                         },
                         "development": {
-                            "browserTarget": "Website:build:development"
+                          "buildTarget": "Website:build:development"
                         }
                     },
                     "defaultConfiguration": "development"
@@ -85,28 +86,13 @@
                 "extract-i18n": {
                     "builder": "@angular-devkit/build-angular:extract-i18n",
                     "options": {
-                        "browserTarget": "Website:build"
-                    }
-                },
-                "test": {
-                    "builder": "@angular-devkit/build-angular:karma",
-                    "options": {
-                        "main": "src/test.ts",
-                        "polyfills": "src/polyfills.ts",
-                        "tsConfig": "tsconfig.spec.json",
-                        "karmaConfig": "karma.conf.js",
-                        "inlineStyleLanguage": "scss",
-                        "assets": [
-                            "src/favicon.ico",
-                            "src/assets"
-                        ],
-                        "styles": [
-                            "src/styles.scss"
-                        ],
-                        "scripts": []
+                      "buildTarget": "Website:build"
                     }
                 }
             }
         }
+    },
+    "cli": {
+      "analytics": false
     }
 }
