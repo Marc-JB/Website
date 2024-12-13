@@ -45,16 +45,17 @@ jobs:
       # Deploy to GitHub Pages
       - name: Copy README, CNAME, etc.
         run: |
-          cp ./dist/index.html ./dist/404.html
-          cp ./CNAME ./dist/CNAME || echo "No CNAME"
-          cp ./README.md ./dist/README.md || echo "No README.md"
-          cp ./LICENSE ./dist/LICENSE || echo "No LICENSE"
+          cp ./dist/browser/index.html ./dist/browser/404.html
+          cp ./CNAME ./dist/browser/CNAME || echo "No CNAME"
+          cp ./README.md ./dist/browser/README.md || echo "No README.md"
+          cp ./LICENSE ./dist/browser/LICENSE || echo "No LICENSE"
+          cp ./dist/3rdpartylicenses.txt ./dist/browser/3rdpartylicenses.txt || echo "No 3rdpartylicenses.txt"
 
       - name: Deploy to GitHub Pages
         if: success()
         uses: crazy-max/ghaction-github-pages@v2
         with:
           target_branch: gh-pages
-          build_dir: ./dist/
+          build_dir: ./dist/browser/
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
