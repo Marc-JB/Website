@@ -37,16 +37,6 @@ jobs:
           path: ./.angular/cache
           key: ${{ runner.os }}-angular
 
-      # Restore SonarQube Cache
-      - name: Cache SonarCloud packages
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.sonar/cache
-            ./.sonar/cache
-          key: ${{ runner.os }}-sonar
-          restore-keys: ${{ runner.os }}-sonar
-
       # Install dependencies
       - name: Install dependencies
         run: |
